@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="ShoppingList_4J.Views.AddNewProductPage"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
+
+    <VerticalStackLayout Padding="20" Spacing="15">
+        <Label Text="Dodaj nowy produkt"
+               FontSize="20"
+               HorizontalOptions="Center" />
+
+        <Entry x:Name="NameEntry"
+               Placeholder="Nazwa produktu" />
+
+        <Entry x:Name="UnitEntry"
+               Placeholder="Jednostka (szt, kg, l)" />
+
+        <Picker x:Name="CategoryPicker"
+                Title="Wybierz kategorię"
+                ItemDisplayBinding="{Binding Name}" />
+
+        <HorizontalStackLayout Spacing="10">
+            <Button Text="Dodaj"
+                    Clicked="OnAddClicked" />
+            <Button Text="Anuluj"
+                    Clicked="OnCancelClicked" />
+        </HorizontalStackLayout>
+    </VerticalStackLayout>
+</ContentPage>

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="ShoppingList_4J.Views.MainPage"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:components="clr-namespace:ShoppingList_4J.Views.Components"
+    Title="Kategorie">
+
+    <VerticalStackLayout Padding="10">
+
+        <HorizontalStackLayout Padding="10" Spacing="10">
+            <Button Text="Dodaj kategorię"
+                    Clicked="OnAddCategoryClicked" />
+            <Button Text="Dodaj produkt"
+                    Clicked="OnAddProductClicked" />
+        </HorizontalStackLayout>
+
+        <ScrollView>
+            <VerticalStackLayout
+                 BindableLayout.ItemsSource="{Binding}">
+                <BindableLayout.ItemTemplate>
+                    <DataTemplate>
+                        <components:CategoryView />
+                    </DataTemplate>
+                </BindableLayout.ItemTemplate>
+            </VerticalStackLayout>
+        </ScrollView>
+
+    </VerticalStackLayout>
+</ContentPage>
