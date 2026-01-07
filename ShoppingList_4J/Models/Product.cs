@@ -10,8 +10,6 @@ public class Product : INotifyPropertyChanged
         Name = name;
         Unit = unit;
     }
-
-    public string Id { get; set; } = Guid.NewGuid().ToString();
     public string Name { get; set; }
     public string Unit { get; set; }
     private int _quantity = 1;
@@ -41,8 +39,6 @@ public class Product : INotifyPropertyChanged
             }
         }
     }
-
-    public string CategoryId { get; set; } = string.Empty;
 
     public event PropertyChangedEventHandler? PropertyChanged;
     protected void OnPropertyChanged([CallerMemberName] string name = null)

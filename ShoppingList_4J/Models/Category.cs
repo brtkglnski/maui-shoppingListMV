@@ -1,8 +1,6 @@
 ﻿using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
-using System.Linq;
-using System.Collections.Specialized;
 
 namespace ShoppingList_4J.Models;
 
@@ -11,6 +9,7 @@ public class Category : INotifyPropertyChanged
     public Category(string name)
     {
         Name = name;
+        Products.CollectionChanged += (sender, eventArgs) => OnPropertyChanged(nameof(Products));
     }
 
     public string Name { get; set; }
